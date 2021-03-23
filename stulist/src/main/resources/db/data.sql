@@ -1,0 +1,10 @@
+INSERT INTO students VALUES (1, 'George Franklin', 'Male', 'California', '2000-03', 'CS');
+INSERT INTO students VALUES (2, 'Betty Davis', 'Female', 'Florida', '1997-05', 'CS');
+INSERT INTO students VALUES (3, 'Eduardo Rodriquez', 'Male', 'Georgia', '1999-12', 'EE');
+INSERT INTO students VALUES (4, 'Harold Davis', 'Male', 'Washington', '2001-09', 'SE');
+INSERT INTO students VALUES (5, 'Peter McTavish', 'Male', 'California', '2000-04', 'SE');
+INSERT INTO students VALUES (6, 'Jean Coleman', 'Female', 'California', '2000-08', 'GEOG');
+INSERT INTO students VALUES (7, 'Jeff Black', 'Male', 'Georgia', '2000-09', 'ME');
+INSERT INTO students VALUES (8, 'Maria Escobito', 'Female', 'Pennsylvania', '2000-04', 'PHILOS');
+INSERT INTO students VALUES (9, 'David Schroeder', 'Male', 'Michigan', '1998-11', 'BIZ');
+INSERT INTO students VALUES (10, 'Carlos Estaban', 'Male', 'Texas', '1999-10', 'HS');
