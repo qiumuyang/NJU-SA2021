@@ -1,0 +1,56 @@
+================================================================================
+---- Global Information --------------------------------------------------------
+> request count                                         10 (OK=10     KO=0     )
+> min response time                                   1191 (OK=1191   KO=-     )
+> max response time                                   1688 (OK=1688   KO=-     )
+> mean response time                                  1421 (OK=1421   KO=-     )
+> std deviation                                        154 (OK=154    KO=-     )
+> response time 50th percentile                       1440 (OK=1440   KO=-     )
+> response time 75th percentile                       1493 (OK=1493   KO=-     )
+> response time 95th percentile                       1644 (OK=1644   KO=-     )
+> response time 99th percentile                       1679 (OK=1679   KO=-     )
+> mean requests/sec                                      5 (OK=5      KO=-     )
+---- Response Time Distribution ------------------------------------------------
+> t < 800 ms                                             0 (  0%)
+> 800 ms < t < 1200 ms                                   2 ( 20%)
+> t > 1200 ms                                            8 ( 80%)
+> failed                                                 0 (  0%)
+================================================================================
+
+================================================================================
+---- Global Information --------------------------------------------------------
+> request count                                         10 (OK=10     KO=0     )
+> min response time                                    712 (OK=712    KO=-     )
+> max response time                                   1206 (OK=1206   KO=-     )
+> mean response time                                   978 (OK=978    KO=-     )
+> std deviation                                        166 (OK=166    KO=-     )
+> response time 50th percentile                       1006 (OK=1006   KO=-     )
+> response time 75th percentile                       1109 (OK=1109   KO=-     )
+> response time 95th percentile                       1164 (OK=1164   KO=-     )
+> response time 99th percentile                       1198 (OK=1198   KO=-     )
+> mean requests/sec                                      5 (OK=5      KO=-     )
+---- Response Time Distribution ------------------------------------------------
+> t < 800 ms                                             2 ( 20%)
+> 800 ms < t < 1200 ms                                   7 ( 70%)
+> t > 1200 ms                                            1 ( 10%)
+> failed                                                 0 (  0%)
+================================================================================
+
+================================================================================
+---- Global Information --------------------------------------------------------
+> request count                                         10 (OK=10     KO=0     )
+> min response time                                    753 (OK=753    KO=-     )
+> max response time                                   1245 (OK=1245   KO=-     )
+> mean response time                                  1065 (OK=1065   KO=-     )
+> std deviation                                        145 (OK=145    KO=-     )
+> response time 50th percentile                       1140 (OK=1140   KO=-     )
+> response time 75th percentile                       1144 (OK=1144   KO=-     )
+> response time 95th percentile                       1202 (OK=1202   KO=-     )
+> response time 99th percentile                       1236 (OK=1236   KO=-     )
+> mean requests/sec                                      5 (OK=5      KO=-     )
+---- Response Time Distribution ------------------------------------------------
+> t < 800 ms                                             1 ( 10%)
+> 800 ms < t < 1200 ms                                   8 ( 80%)
+> t > 1200 ms                                            1 ( 10%)
+> failed                                                 0 (  0%)
+================================================================================
