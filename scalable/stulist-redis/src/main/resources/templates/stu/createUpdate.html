@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'Students')}">
+
+<body>
+
+
+    <h2>Student</h2>
+    <form th:object="${student}" class="form-horizontal" id="add-student-form" method="post">
+        <div class="form-group has-feedback">
+            <th:block th:if="${!student['new']}">
+                <input th:replace="~{fragments/inputField :: input ('ID', 'id', 'readonly')}" />
+            </th:block>
+            <th:block th:if="${student['new']}">
+                <input th:replace="~{fragments/inputField :: input ('ID', 'id', 'text')}" />
+            </th:block>
+            <input th:replace="~{fragments/inputField :: input ('Name', 'name', 'text')}" />
+            <input th:replace="~{fragments/inputField :: input ('Gender', 'sex', 'gender')}" />
+            <input th:replace="~{fragments/inputField :: input ('Department', 'department', 'text')}" />
+            <input th:replace="~{fragments/inputField :: input ('Birth Place', 'birthPlace', 'text')}" />
+            <input th:replace="~{fragments/inputField :: input ('Birth Date', 'birthDate', 'date')}" />
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button th:with="text=${student['new']} ? 'Add Student' : 'Update Student'" class="btn btn-default"
+                    type="submit" th:text="${text}">Submit</button>
+            </div>
+        </div>
+    </form>
+    <br />
+
+
+</body>
+
+</html>
