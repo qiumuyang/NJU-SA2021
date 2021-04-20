@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -24,6 +28,7 @@ import java.util.stream.StreamSupport;
 import javax.validation.Valid;
 
 @RestController
+@Api(description = "学生管理")
 public class StudentRestController {
 
     private StudentRepository repository;
@@ -32,6 +37,7 @@ public class StudentRestController {
         this.repository = repository;
     }
 
+    @ApiOperation(value = "获取学生列表", notes = "获取学生列表")
     @GetMapping("/students")
     public ResponseEntity<List<Student>> getStudents() {
         List<Student> list = StreamSupport.stream(repository.findAll().spliterator(), false)
@@ -39,6 +45,7 @@ public class StudentRestController {
         return new ResponseEntity<List<Student>>(list, HttpStatus.OK);
     }
 
+    @ApiOperation(value = "获取学生", notes = "获取指定学生")
     @GetMapping("/students/{id}")
     public ResponseEntity<Student> getStudent(@PathVariable("id") Long id) {
         Optional<Student> student = repository.findById(id);
@@ -48,6 +55,7 @@ public class StudentRestController {
         return new ResponseEntity<Student>(student.get(), HttpStatus.OK);
     }
 
+    @ApiOperation(value = "创建学生", notes = "创建学生")
     @PostMapping("/students")
     public ResponseEntity<Student> newStudent(@RequestBody @Valid Student student, BindingResult bindingResult,
             UriComponentsBuilder ucBuilder) {
@@ -63,6 +71,7 @@ public class StudentRestController {
         return new ResponseEntity<Student>(student, headers, HttpStatus.CREATED);
     }
 
+    @ApiOperation(value = "修改学生", notes = "修改学生信息")
     @PutMapping("/students/{id}")
     public ResponseEntity<Student> updateStudent(@RequestBody @Valid Student student, @PathVariable long id,
             BindingResult bindingResult, UriComponentsBuilder ucBuilder) {
@@ -87,6 +96,7 @@ public class StudentRestController {
         return new ResponseEntity<Student>(stu, HttpStatus.NO_CONTENT);
     }
 
+    @ApiOperation(value = "删除学生", notes = "删除学生")
     @DeleteMapping("/students/{id}")
     public ResponseEntity<Student> deleteStudent(@PathVariable long id) {
         Optional<Student> current = repository.findById(id);
