@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html th:fragment="layout (template, menuName)">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="/icon/favicon.ico">
+
+    <title th:text="${menuName}">Title</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <link href="/css/starter-template.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Student Manage</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+
+                <ul class="nav navbar-nav" th:remove="all">
+                    <li th:fragment="menuItem (link,active,title,text)" class="active"
+                        th:class="${active==menuName ? 'active' : ''}">
+                        <a th:href="@{__${link}__}" th:title="${title}">
+                            <span th:text="${text}">Template</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+                    <li th:replace="::menuItem ('/','Home','home page','Home')"></li>
+                    <li th:replace="::menuItem ('/stu/find','Students','find students','Students')"></li>
+                    <li th:replace="::menuItem ('/err','Error','error','Error')"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <th:block th:include="${template}" />
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
