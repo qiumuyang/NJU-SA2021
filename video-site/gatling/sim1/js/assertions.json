@@ -1,0 +1,10 @@
+{
+  "simulation": "video.VideoSimulation",
+  "simulationId": "videosimulation",
+  "start": 1623508260799,
+  "description": "1 server 50 user",
+  "scenarios": ["Test Video GET"],
+  "assertions": [
+
+  ]
+}
