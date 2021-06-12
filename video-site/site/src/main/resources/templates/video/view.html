@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'')}">
+
+<body>
+    <h2 th:text=${title}></h2>
+
+    <br />
+
+    <div class="panel panel-default">
+        <div class="panel-body" align="center">
+            <video width="80%" align="center" controls>
+                <source th:src="@{__${url}__}" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <br />
+
+    <a th:href="@{/video/view/__${video.vid}__}" th:text="原画" /> <br />
+    <a th:href="@{/video/view/__${video.vid}__} + '?quality=480'" th:text="480p" /> <br />
+    <a th:href="@{/video/view/__${video.vid}__} + '?quality=720'" th:text="720p" />
+    <br />
+
+</body>
+
+</html>

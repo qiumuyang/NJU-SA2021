@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'Video')}">
+
+<body>
+    <h2>Video List</h2>
+
+    <table id="videos" class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>标题</th>
+                <th>UP</th>
+                <th>播放量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="video : ${list}">
+                <td th:text="${video.vid}" />
+                <td>
+                    <a th:href="@{/video/view/__${video.vid}__}" th:text="${video.title}" />
+                </td>
+                <td th:text="${video.uid}" />
+                <td th:text="${video.view}" />
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>

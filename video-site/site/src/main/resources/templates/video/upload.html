@@ -1,0 +1,16 @@
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'Upload')}">
+
+<body>
+
+    <h2>Upload</h2>
+
+    <form action="/video/upload" id="upload-form" method="post" enctype="multipart/form-data">
+        <input type="text" id="name" name="name" value="用户名" />
+        <input type="text" id="title" name="title" value="标题" />
+        <input type="file" id="file" name="file" value="选择视频" accept=".mp4" />
+        <input type="submit" />
+    </form>
+
+</body>
+
+</html>
